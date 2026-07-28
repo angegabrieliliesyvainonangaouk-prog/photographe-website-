@@ -119,6 +119,9 @@
         .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
+
+    //fonction prevImage
+
     prevImage() {
       let activeImage = null;
       $("img.gallery-item").each(function() {
@@ -152,12 +155,16 @@
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i ;
         }
+
+        //DESCRIPTION DE 'UNE DES PARTIES de la fonction qui part en arrière 
       });
       next =
-        imagesCollection[index] ||
+        imagesCollection[index - 1] ||
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+
+    //Fonction nextImage
     nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function() {
@@ -192,7 +199,7 @@
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      next = imagesCollection[index + 1] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
@@ -240,7 +247,7 @@
         return;
       }
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(this).addClass("active-tag active");
 
       var tag = $(this).data("images-toggle");
 

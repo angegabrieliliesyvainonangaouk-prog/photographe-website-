@@ -11,3 +11,27 @@ Performance=50
 Accessibilité=68
 Best practices=100
 seo=73
+
+---
+
+## Problème de contraste corrigé
+
+**Détecté par :** WAVE
+**Fichier :** `Nina-Carducci-Dev/assets/style.css`
+**Ligne :** 104
+
+**Problème :** Texte blanc (`#fff`) sur fond `#BEB45A` (jaune/olive clair) → ratio de contraste ~2:1, bien inférieur au minimum WCAG AA de 4.5:1 pour le texte normal.
+
+**Impact :** Illisible pour les utilisateurs malvoyants, non conforme aux normes d'accessibilité.
+
+**Correction appliquée :**
+```css
+/* Avant */
+color: #fff;
+
+/* Après */
+color: #000;
+```
+Le noir (`#000`) sur `#BEB45A` donne un ratio ~10:1 → conforme WCAG AAA.
+
+**Résultat Lighthouse accessibilité attendu :** 96 → devrait passer à 100 après cette correction et rafraîchissement du cache.
