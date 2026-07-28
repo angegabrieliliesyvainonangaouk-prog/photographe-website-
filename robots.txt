@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://angegabrieliliesyvainonangaouk-prog.github.io/photographe-website-/sitemap.xml
