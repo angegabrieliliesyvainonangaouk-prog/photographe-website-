@@ -80,6 +80,9 @@
 | `aria-hidden="true"` sur icônes décoratives | Ignorées par les lecteurs d'écran |
 | Cibles tactiles ≥ 24x24px | Indicateurs carousel et liens sociaux |
 | `rel="noopener noreferrer"` sur liens externes | Sécurité |
+| Alt manquant sur l'image appareil photo (section contact) | `alt="Appareil photo professionnel de Nina Carducci"` ajouté (correction "Null or empty alternative text" Wave) |
+| Contraste du bouton "Envoyer" | `color: #000` imposé sur fond doré `#BEB45A` → ratio 9.9:1 (WCAG AA) |
+| Libellés "Previous"/"Next" du carrousel | Textes blancs cachés (1:1, "very low contrast") remplacés par `aria-label` sur les boutons → suppression des 2 erreurs de contraste Wave |
 
 ---
 
